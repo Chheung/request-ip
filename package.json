@@ -1,5 +1,5 @@
 {
-  "name": "request-ip",
+  "name": "@chienchheung/request-ip",
   "version": "3.3.0",
   "description": "A small Node.js module to retrieve the request's IP address",
   "keywords": [
@@ -30,13 +30,13 @@
     "cloudflare",
     "Cf-Pseudo-IPv4"
   ],
-  "homepage": "https://github.com/pbojinov/request-ip",
+  "homepage": "https://github.com/Chheung/request-ip",
   "bugs": {
-    "url": "https://github.com/pbojinov/request-ip/issues"
+    "url": "https://github.com/Chheung/request-ip/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pbojinov/request-ip.git"
+    "url": "https://github.com/Chheung/request-ip.git"
   },
   "license": "MIT",
   "author": "Petar Bojinov <petarbojinov+github@gmail.com>",
@@ -44,6 +44,11 @@
     {
       "name": "Jon Peck",
       "email": "jpeck@fluxsauce.com"
+    },
+    {
+      "name": "Chheung",
+      "url": "https://github.com/Chheung",
+      "email": "chienchheung@gmail.com"
     }
   ],
   "files": [
