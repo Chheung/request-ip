@@ -18,13 +18,13 @@ PR: https://github.com/pbojinov/request-ip/pull/76
 Yarn
 
 ```
-yarn add request-ip
+yarn add @chienchheung/request-ip
 ```
 
 npm
 
 ```bash
-npm install request-ip --save
+npm install @chienchheung/request-ip --save
 ```
 
 ## Getting Started
