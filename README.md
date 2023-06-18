@@ -82,8 +82,8 @@ The user ip is determined by the following order:
 
 If an IP address cannot be found, it will return `null`.
 
-However you can add your priority if you dont want to go by the above order. (For cloudflare use case)
-Example:
+However you can add your priority if you dont want to go by the above order.
+Example if you are behind CloudFlare proxy:
 
 ```javascript
 const requestIp = require('request-ip');
