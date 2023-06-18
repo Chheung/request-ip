@@ -1,6 +1,6 @@
 const is = require('./is');
 
-const defaultHeaderPrioritylist = [
+const DEFAULT = [
     'x-client-ip',
     'x-forwarded-for',
     'cf-connecting-ip',
@@ -14,7 +14,7 @@ const defaultHeaderPrioritylist = [
     'x-appengine-user-ip',
 ];
 
-let headerPriorityList = defaultHeaderPrioritylist;
+let headerPriority = DEFAULT;
 
 /**
  * Parse x-forwarded-for headers.
@@ -170,7 +170,7 @@ function getClientIpByHeader(req, header) {
 function getClientIp(req) {
     // Server is probably behind a proxy.
     if (req?.headers) {
-        for (const header of headerPriorityList) {
+        for (const header of headerPriority) {
             const value = getClientIpByHeader(req, header);
             if (value) return value;
         }
@@ -248,15 +248,15 @@ function mw(options) {
         }
 
         for (const prioritizedHeader of configuration.prioritize) {
-            for (let i = 0; i < headerPriorityList.length; i++) {
-                if (prioritizedHeader === headerPriorityList[i]) {
-                    headerPriorityList.splice(i, 1);
+            for (let i = 0; i < headerPriority.length; i++) {
+                if (prioritizedHeader === headerPriority[i]) {
+                    headerPriority.splice(i, 1);
                     break;
                 }
             }
         }
 
-        headerPriorityList.unshift(...configuration.prioritize);
+        headerPriority.unshift(...configuration.prioritize);
     }
 
     const attributeName = configuration.attributeName || 'clientIp';

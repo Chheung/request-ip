@@ -82,13 +82,13 @@ The user ip is determined by the following order:
 
 If an IP address cannot be found, it will return `null`.
 
-However you can add your priority if you dont want to go by the above order.
+However you can add your priority if you dont want to go by the above order. (For cloudflare use case)
 Example:
 
 ```javascript
 const requestIp = require('request-ip');
 app.use(requestIp.mw(), {
-  prioritize: ['x-real-ip', 'x-cluster-client-ip'],
+  prioritize: ['cf-connecting-ip', 'x-real-ip'],
 });
 
 app.use(function (req, res) {
